@@ -1,0 +1,9 @@
+/* ==================================================
+   COMPONENTS STYLES MODULE (CONSOLIDATED)
+   Imports buttons, cards, forms, navigation, and modal components
+   ================================================== */
+@import "./components/buttons.css";
+@import "./components/cards.css";
+@import "./components/forms.css";
+@import "./components/navigation.css";
+@import "./components/modal.css";

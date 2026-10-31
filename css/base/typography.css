@@ -1,0 +1,151 @@
+/* ==========================================================================
+   TYPOGRAPHY SYSTEM - EDITORIAL & HIERARCHY
+   ========================================================================== */
+
+/* Heading Scales with Fluid Clamping */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.02;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+h4, .h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+/* Editorial Serif & Italic Accents */
+.editorial-italic,
+.italic-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--color-accent);
+}
+
+/* Outline / Strokeline Typography */
+.title-stroke,
+.text-outline {
+  color: transparent !important;
+  -webkit-text-stroke: 1.2px var(--color-accent);
+  text-stroke: 1.2px var(--color-accent);
+  transition: -webkit-text-stroke var(--transition-normal);
+}
+
+.title-stroke-white {
+  color: transparent !important;
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.4);
+  text-stroke: 1.2px rgba(255, 255, 255, 0.4);
+}
+
+/* Section Tag / Eyebrow */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+.section-tag::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+.section-tag.no-line::before {
+  display: none;
+}
+
+/* Body Copy Variations */
+p {
+  color: var(--color-text-dim);
+  font-size: 1rem;
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+.lead,
+.text-lead {
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--color-text-dim);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-dim {
+  color: var(--color-text-dim);
+}
+
+.text-gold {
+  color: var(--color-accent);
+}
+
+.text-small {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.text-caption {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Number Callouts / Big Stat Figures */
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--color-accent);
+}
+
+/* Ampersand special treatment */
+.ampersand {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--color-accent);
+  font-size: 0.85em;
+}

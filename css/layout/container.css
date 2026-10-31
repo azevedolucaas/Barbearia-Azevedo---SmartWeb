@@ -1,0 +1,15 @@
+/* Container Architecture */
+.container {
+  width: min(100% - 40px, 1280px);
+  margin-inline: auto;
+}
+
+.container-wide {
+  width: min(100% - 40px, 1440px);
+  margin-inline: auto;
+}
+
+.container-narrow {
+  width: min(100% - 40px, 960px);
+  margin-inline: auto;
+}

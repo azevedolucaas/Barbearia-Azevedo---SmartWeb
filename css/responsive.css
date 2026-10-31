@@ -1,0 +1,243 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN BREAKPOINTS - BARBEARIA AZEVEDO
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. LAPTOPS & TABLETS LANDSCAPE (Max 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .footer-grid .footer-col:last-child {
+    grid-column: span 3;
+    margin-top: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLETS PORTRAIT (Max 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .nav-menu,
+  .nav-actions .nav-cta {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+  }
+
+  .hero-image-wrap {
+    max-width: 580px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 11;
+  }
+
+  .hero-badge-stamp {
+    left: 1rem;
+    bottom: 1rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .about-composition {
+    max-width: 540px;
+    margin: 0 auto;
+    padding-right: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .barbers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .barbers-grid .barber-card:last-child {
+    grid-column: span 2;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item:nth-child(1) { grid-column: span 12; aspect-ratio: 16 / 10; }
+  .gallery-item:nth-child(2) { grid-column: span 6; aspect-ratio: 4 / 3.5; }
+  .gallery-item:nth-child(3) { grid-column: span 6; aspect-ratio: 4 / 3.5; }
+  .gallery-item:nth-child(4) { grid-column: span 6; aspect-ratio: 4 / 3.5; }
+  .gallery-item:nth-child(5) { grid-column: span 6; aspect-ratio: 4 / 3.5; }
+  .gallery-item:nth-child(6) { grid-column: span 12; aspect-ratio: 16 / 9; }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-grid .footer-col:first-child {
+    grid-column: span 2;
+  }
+
+  .footer-grid .footer-col:last-child {
+    grid-column: span 2;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBILE PHONES (Max 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .navbar {
+    height: 70px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .barbers-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .barbers-grid .barber-card:last-child {
+    grid-column: span 1;
+    max-width: 100%;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-trust-indicators {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .hero-badge-stamp {
+    position: static;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .about-pillars {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gallery-item:nth-child(2),
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(4),
+  .gallery-item:nth-child(5) {
+    grid-column: span 12;
+    aspect-ratio: 16 / 11;
+  }
+
+  .lightbox-nav-btn.prev {
+    left: 8px;
+  }
+
+  .lightbox-nav-btn.next {
+    right: 8px;
+  }
+
+  .floating-whatsapp {
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .floating-whatsapp svg {
+    font-size: 1.6rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .footer-legal-links {
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. SMALL MOBILE SCREENS (Max 480px & 320px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .container,
+  .container-wide,
+  .container-narrow {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .nav-logo-text {
+    font-size: 1.45rem;
+  }
+
+  .booking-info-card,
+  .booking-form-card {
+    padding: 1.5rem;
+  }
+
+  .instagram-grid {
+    grid-template-columns: 1fr;
+  }
+}

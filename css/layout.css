@@ -1,0 +1,7 @@
+/* ==================================================
+   LAYOUT STYLES MODULE (CONSOLIDATED)
+   Imports container grids, header architecture, and footer layout
+   ================================================== */
+@import "./layout/container.css";
+@import "./layout/grid.css";
+@import "./layout/footer.css";

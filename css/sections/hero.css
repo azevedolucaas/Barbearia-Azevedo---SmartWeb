@@ -1,0 +1,207 @@
+/* --------------------------------------------------------------------------
+   2. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  background: radial-gradient(circle at 80% 20%, rgba(200, 169, 126, 0.05) 0%, transparent 60%),
+              radial-gradient(circle at 10% 80%, rgba(25, 25, 25, 0.8) 0%, transparent 70%),
+              var(--color-bg);
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+  width: 100%;
+}
+
+.hero-content {
+  position: relative;
+  z-index: var(--z-base);
+}
+
+.hero-title {
+  margin-bottom: var(--space-md);
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-desc {
+  font-size: clamp(1.05rem, 1.3vw, 1.22rem);
+  line-height: 1.75;
+  color: var(--color-text-dim);
+  max-width: 540px;
+  margin-bottom: var(--space-xl);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2xl);
+}
+
+.hero-trust-indicators {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.hero-trust-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-trust-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+.hero-trust-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+.hero-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform var(--transition-slow);
+}
+
+.hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.8) 0%, transparent 60%),
+              linear-gradient(to right, rgba(10, 10, 10, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-badge-stamp {
+  position: absolute;
+  bottom: 2rem;
+  left: -1.5rem;
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border-gold);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.hero-badge-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.hero-badge-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.hero-badge-sub {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   3. MARQUEE INFINITE TICKER
+   -------------------------------------------------------------------------- */
+.marquee-strip {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: 1.25rem 0;
+  overflow: hidden;
+  display: flex;
+  user-select: none;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 35s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.marquee-item {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  transition: color var(--transition-fast);
+}
+
+.marquee-item:hover {
+  color: var(--color-accent);
+}
+
+.marquee-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent);
+  display: inline-block;
+}
+

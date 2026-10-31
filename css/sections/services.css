@@ -1,0 +1,13 @@
+/* --------------------------------------------------------------------------
+   5. SERVIÇOS
+   -------------------------------------------------------------------------- */
+.services-section {
+  background-color: var(--color-bg-secondary);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+

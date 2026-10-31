@@ -1,0 +1,81 @@
+/* --------------------------------------------------------------------------
+   1. BUTTONS & CTAs
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.95rem 1.9rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+.btn svg,
+.btn .iconify {
+  font-size: 1.15em;
+  transition: transform var(--transition-normal);
+}
+
+.btn:hover svg,
+.btn:hover .iconify {
+  transform: translateX(4px);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border: 1px solid var(--color-accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent-light);
+  box-shadow: 0 4px 20px var(--color-accent-glow);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: var(--color-accent-subtle);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #0A0A0A;
+  border: 1px solid #25D366;
+  font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+  background-color: #20BD5A;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+}
+
+.btn-block {
+  width: 100%;
+}
+

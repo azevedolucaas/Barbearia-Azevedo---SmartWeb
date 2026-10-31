@@ -1,0 +1,37 @@
+# ==============================================================================
+# .gitignore — Projeto Barbearia Azevedo Corta
+# Regras de segurança, privacidade e proteção pré-publicação
+# ==============================================================================
+
+# Arquivos de ambiente e segredos locais (NUNCA publicar)
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+
+# Ferramentas de testes locais, automação e logs
+.playwright-mcp/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Backups históricos de desenvolvimento local (preservados no disco do desenvolvedor)
+_backup_*/
+
+# Configurações de IDEs e editores de código
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Arquivos temporários e metadados de sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini

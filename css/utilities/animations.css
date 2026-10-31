@@ -1,0 +1,159 @@
+/* ==========================================================================
+   ANIMATIONS & SCROLL REVEALS - BARBEARIA AZEVEDO
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. KEYFRAME DEFINITIONS
+   -------------------------------------------------------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(200, 169, 126, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(200, 169, 126, 0.45);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. SCROLL REVEAL UTILITY CLASSES (Safe Default & JS-driven Reveal)
+   -------------------------------------------------------------------------- */
+.reveal,
+.reveal-fade,
+.reveal-left,
+.reveal-right {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.8s var(--ease-out-expo),
+              transform 0.8s var(--ease-out-expo);
+  will-change: opacity, transform;
+}
+
+/* Enable scroll reveal hidden state ONLY when JS is initialized */
+body.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+body.js-enabled .reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.js-enabled .reveal-fade {
+  opacity: 0;
+}
+
+body.js-enabled .reveal-fade.is-revealed {
+  opacity: 1;
+}
+
+body.js-enabled .reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+body.js-enabled .reveal-left.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+body.js-enabled .reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+body.js-enabled .reveal-right.is-revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered Children Delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+/* --------------------------------------------------------------------------
+   3. HERO PARALLAX
+   -------------------------------------------------------------------------- */
+.parallax-layer {
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* --------------------------------------------------------------------------
+   4. REDUCED MOTION QUERY
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .parallax-layer {
+    transform: none !important;
+  }
+}

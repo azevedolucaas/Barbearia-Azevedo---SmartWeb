@@ -1,0 +1,7 @@
+/* ==================================================
+   BASE STYLES MODULE (CONSOLIDATED)
+   Imports modular resets, design tokens, and typography system
+   ================================================== */
+@import "./base/reset.css";
+@import "./base/variables.css";
+@import "./base/typography.css";

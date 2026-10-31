@@ -1,0 +1,35 @@
+/* ==================================================
+   BARBEARIA AZEVEDO CORTA — MAIN STYLESHEET
+   Central entry point importing consolidated modular stylesheets:
+   1. Base
+   2. Layout
+   3. Components
+   4. Sections
+   5. Utilities
+   6. Responsive Breakpoints
+   ================================================== */
+
+/* 1. Base Styles (Imports reset, variables, typography) */
+@import "./base.css";
+
+/* 2. Layout Styles (Imports container, grid, header, footer) */
+@import "./layout.css";
+
+/* 3. Component Styles (Imports buttons, cards, forms, nav, modal) */
+@import "./components.css";
+
+/* 4. Section Styles */
+@import "./sections/hero.css";
+@import "./sections/about.css";
+@import "./sections/services.css";
+@import "./sections/team.css";
+@import "./sections/gallery.css";
+@import "./sections/testimonials.css";
+@import "./sections/contact.css";
+
+/* 5. Utility & Animation Styles */
+@import "./utilities/animations.css";
+@import "./utilities/utilities.css";
+
+/* 6. Responsive Breakpoints */
+@import "./responsive.css";

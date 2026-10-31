@@ -1,0 +1,127 @@
+/* --------------------------------------------------------------------------
+   8. AVALIAÇÕES (TESTIMONIALS SLIDER)
+   -------------------------------------------------------------------------- */
+.testimonials-section {
+  background-color: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonials-slider-wrap {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.testimonial-track-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform var(--transition-normal);
+}
+
+.testimonial-slide {
+  min-width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonial-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+}
+
+.testimonial-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  line-height: 1.6;
+  color: var(--color-text);
+  max-width: 800px;
+  margin-bottom: var(--space-lg);
+  position: relative;
+}
+
+.testimonial-author-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.testimonial-author-role {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.testimonial-service-tag {
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: var(--space-xl);
+}
+
+.slider-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-subtle);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all var(--transition-fast);
+}
+
+.slider-btn:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent);
+}
+
+.slider-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-border-medium);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.slider-dot.active {
+  width: 24px;
+  background-color: var(--color-accent);
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   9. AGENDAMENTO (BOOKING)

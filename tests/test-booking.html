@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Teste Automatizado do Agendamento</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    body { padding: 40px; background: #111; color: #fff; font-family: sans-serif; }
+    .test-box { max-width: 600px; margin: 0 auto; background: #1c1c1c; padding: 30px; border-radius: 8px; border: 1px solid #333; }
+    #testResults { margin-top: 20px; padding: 15px; border-radius: 6px; font-family: monospace; white-space: pre-wrap; }
+    .pass { background: rgba(76, 175, 80, 0.2); border: 1px solid #4CAF50; color: #81C784; }
+    .fail { background: rgba(244, 67, 54, 0.2); border: 1px solid #F44336; color: #E57373; }
+  </style>
+</head>
+<body>
+  <div class="test-box">
+    <h2>🧪 Teste do Agendamento da Barbearia Azevedo</h2>
+    <div id="bookingStatusAlert" class="form-status-alert"></div>
+
+    <form id="bookingForm" novalidate>
+      <div class="form-group">
+        <label for="clientName">Nome Completo</label>
+        <input type="text" id="clientName" class="form-control" required>
+        <span class="form-error-msg">Nome inválido</span>
+      </div>
+
+      <div class="form-group">
+        <label for="clientPhone">Telefone</label>
+        <input type="tel" id="clientPhone" class="form-control" required>
+        <span class="form-error-msg">Telefone inválido</span>
+      </div>
+
+      <div class="form-group">
+        <label for="clientEmail">Email</label>
+        <input type="email" id="clientEmail" class="form-control">
+        <span class="form-error-msg">Email inválido</span>
+      </div>
+
+      <div class="form-group">
+        <label for="clientService">Serviço</label>
+        <select id="clientService" class="form-control" required>
+          <option value="">Selecione...</option>
+          <option value="degrade" data-name="Degradê de Precisão">Degradê de Precisão — R$ 80</option>
+        </select>
+        <span class="form-error-msg">Serviço obrigatório</span>
+      </div>
+
+      <div class="form-group">
+        <label for="clientBarber">Barbeiro</label>
+        <select id="clientBarber" class="form-control">
+          <option value="mateus-silva" data-name="Mateus Silva">Mateus Silva (Fade)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="clientDate">Data</label>
+        <input type="date" id="clientDate" class="form-control" required>
+        <span class="form-error-msg">Data inválida</span>
+      </div>
+
+      <div class="form-group">
+        <label for="clientTime">Horário</label>
+        <select id="clientTime" class="form-control" required>
+          <option value="">Selecione...</option>
+          <option value="15:00">15:00</option>
+        </select>
+        <span class="form-error-msg">Horário obrigatório</span>
+      </div>
+
+      <div class="form-group">
+        <label for="clientNotes">Observações</label>
+        <input type="text" id="clientNotes" class="form-control">
+      </div>
+
+      <button type="submit" id="bookingSubmitBtn" class="btn btn-primary btn-block">
+        SOLICITAR AGENDAMENTO
+      </button>
+    </form>
+
+    <div id="testResults">Aguardando execução...</div>
+  </div>
+
+  <script type="module">
+    import { initBooking } from '../js/features/booking.js';
+
+    initBooking();
+
+    const resultsEl = document.getElementById('testResults');
+    const logs = [];
+    function log(msg, ok) {
+      logs.push(`${ok ? '✅' : '❌'} ${msg}`);
+      resultsEl.textContent = logs.join('\n');
+      resultsEl.className = ok ? 'pass' : 'fail';
+    }
+
+    window.runBookingAutoTest = async function() {
+      try {
+        const form = document.getElementById('bookingForm');
+        const alertEl = document.getElementById('bookingStatusAlert');
+
+        // Test 1: Empty submit triggers validation error
+        form.querySelector('#bookingSubmitBtn').click();
+        await new Promise(r => setTimeout(r, 200));
+
+        if (alertEl.classList.contains('error')) {
+          log("Validação de campos vazios bloqueou envio e exibiu alerta de erro", true);
+        } else {
+          log("Validação de campos vazios falhou", false);
+        }
+
+        // Test 2: Fill valid data
+        document.getElementById('clientName').value = "Carlos Eduardo de Souza";
+        document.getElementById('clientPhone').value = "(11) 98765-4321";
+        document.getElementById('clientEmail').value = "carlos.souza@teste.com";
+        document.getElementById('clientService').value = "degrade";
+        document.getElementById('clientBarber').value = "mateus-silva";
+        document.getElementById('clientDate').value = "2026-11-05";
+        document.getElementById('clientTime').value = "15:00";
+        document.getElementById('clientNotes').value = "Agendamento de Teste Automatizado";
+
+        // Dispatch Submit
+        form.dispatchEvent(new Event('submit', { cancelable: true }));
+
+        // Wait for fetch & processing
+        await new Promise(r => setTimeout(r, 1200));
+
+        // Check if success alert is active
+        const isSuccess = alertEl.classList.contains('success');
+        const hasProtocol = alertEl.textContent.includes('PROTOCOLO #AZV-');
+        const hasWaBtn = !!alertEl.querySelector('.btn-whatsapp');
+
+        if (isSuccess && hasProtocol && hasWaBtn) {
+          log("Card de sucesso renderizado com sucesso com PROTOCOLO e botão WhatsApp!", true);
+        } else {
+          log("Falha ao renderizar card de sucesso com protocolo", false);
+        }
+
+        // Check LocalStorage
+        const storageData = JSON.parse(localStorage.getItem('azevedo_agendamentos') || '[]');
+        if (storageData.length > 0 && storageData[0].cliente.nome === "Carlos Eduardo de Souza") {
+          log(`Persistência em localStorage confirmada! (${storageData[0].protocolo})`, true);
+        } else {
+          log("Falha ao persistir agendamento no localStorage", false);
+        }
+
+        return true;
+      } catch (err) {
+        log("Erro na execução do teste: " + err.message, false);
+        return false;
+      }
+    };
+
+    // Auto-run on load after 500ms
+    setTimeout(window.runBookingAutoTest, 500);
+  </script>
+</body>
+</html>

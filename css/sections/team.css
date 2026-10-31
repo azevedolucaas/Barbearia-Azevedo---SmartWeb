@@ -1,0 +1,13 @@
+/* --------------------------------------------------------------------------
+   7. BARBEIROS
+   -------------------------------------------------------------------------- */
+.barbers-section {
+  background-color: var(--color-bg-secondary);
+}
+
+.barbers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+

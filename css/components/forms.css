@@ -1,0 +1,120 @@
+/* --------------------------------------------------------------------------
+4. FORM CONTROLS
+   -------------------------------------------------------------------------- */
+.form-group {
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  margin-bottom: 0.45rem;
+  font-weight: 500;
+}
+
+.form-label .required {
+  color: var(--color-accent);
+  margin-left: 2px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.9rem 1.15rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  color: var(--color-text);
+  font-size: 0.92rem;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control:hover {
+  border-color: var(--color-border-medium);
+  background-color: var(--color-surface-elevated);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background-color: var(--color-surface-elevated);
+  box-shadow: 0 0 0 3px var(--color-accent-subtle);
+}
+
+.form-control:not(:placeholder-shown):not(.has-error) {
+  border-color: rgba(200, 169, 126, 0.28);
+}
+
+.form-control::placeholder {
+  color: var(--color-text-faint);
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23C8A97E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 14px;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+select.form-control option {
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text);
+  padding: 8px;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-error-msg {
+  font-size: 0.75rem;
+  color: var(--color-error);
+  margin-top: 0.35rem;
+  display: none;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.form-control.has-error {
+  border-color: var(--color-error) !important;
+  box-shadow: 0 0 0 2px rgba(229, 115, 115, 0.18) !important;
+  background-color: rgba(229, 115, 115, 0.04) !important;
+}
+
+.form-control.has-error + .form-error-msg,
+.form-group:has(.form-control.has-error) .form-error-msg {
+  display: block;
+}
+
+.form-status-alert {
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-xs);
+  margin-bottom: var(--space-lg);
+  display: none;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.form-status-alert.active {
+  display: block;
+  animation: fadeIn 0.4s var(--ease-out-quart);
+}
+
+.form-status-alert.success {
+  background-color: rgba(200, 169, 126, 0.08);
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-text);
+}
+
+.form-status-alert.error {
+  background-color: rgba(229, 115, 115, 0.08);
+  border: 1px solid rgba(229, 115, 115, 0.35);
+  color: #FFCDD2;
+}
+

@@ -1,0 +1,119 @@
+/* --------------------------------------------------------------------------
+   4. NOSSA HISTÓRIA (ABOUT)
+   -------------------------------------------------------------------------- */
+.about-section {
+  background-color: var(--color-bg);
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.about-composition {
+  position: relative;
+  padding-bottom: 3rem;
+  padding-right: 2rem;
+}
+
+.about-img-main {
+  width: 88%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+.about-img-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.about-img-inset {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 52%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  border: 2px solid var(--color-bg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-img-inset img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-year-badge {
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border-gold);
+  padding: 0.8rem 1.25rem;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+.about-content h2 {
+  margin-bottom: var(--space-md);
+}
+
+.about-lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+.about-body {
+  margin-bottom: var(--space-xl);
+}
+
+.about-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.pillar-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.pillar-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.35;
+  margin-bottom: 0.25rem;
+}
+
+.pillar-desc {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
